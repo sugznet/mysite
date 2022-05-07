@@ -1,0 +1,161 @@
+{# =================================
+    ホーム
+==================================== #}
+{% extends 'template/base/base.twig' %}
+{% set description='杉山大知による個人サイトです。作ったものと勉強したことをまとめています。' %}
+{% set keywords='杉山大知,Daichi Sugiyama' %}
+{% set menu_id='home' %}
+{% block head %}
+{{parent()}}
+<link rel="stylesheet" type="text/css" href="/css/home/style.min.css?{{ siteinfo.version }}">
+<script src="/js/home/script.min.js?{{ siteinfo.version }}"></script>
+{% endblock %}
+{% block content %}
+<div class="inner">
+    <section class="first">
+        <div class="keyvisual">
+            {# <img src="https://placehold.jp/350x600.png" height="500" class="sp"></img> #}
+            <img src="/img/common/keyvisual_sp.jpg" height="500" class="sp"></img>
+            {# <img src="https://placehold.jp/1200x550.png" height="600" class="pc"></img> #}
+            <img src="/img/common/keyvisual_pc.jpg" height="600" class="pc"></img>
+        </div>
+        <div class="description">
+            <p>杉山大知による個人サイトです。<br>作ったものと勉強したことをまとめています。</p>
+            {# <p><a href="" class="under">Daichi Sugiyama</a>による個人サイトです<br>作ったものと勉強したことをまとめています</p> #}
+        </div>
+    </section>
+    <section class="works">
+        <div class="head">
+            <div class="title" data-en="Works">制作物</div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                {% for works_item in works_list %}
+                <div class="col-6 col-tab-6 col-pc-3">
+                    <div class="card">
+                        <a href="/{{ works_item.kind }}/{{ works_item.slug }}" class="link">
+                            <img src="/img/{{ works_item.thumbnail }}" class="thumbnail">
+                            <div class="title">{{ works_item.title }}</div>
+                        </a>
+                        <div class="meta">
+                            <a href=""><div class="tag">{{ works_item.tag_name }}</div></a>
+                            <div class="date">{{ works_item.updated_date|date('Y/m') }}</div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="foot">
+            {# <a href="/" class="see_all">See All posts→</a> #}
+        </div>
+    </section>
+    <section class="blog">
+        <div class="head">
+            <div class="title" data-en="Blog">ブログ</div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                {% for blog_item in blog_list %}
+                <div class="col-12">
+                    <div class="card">
+                        <a href="/{{ blog_item.kind }}/{{ blog_item.slug }}" class="link">
+                            <img src="/{{ blog_item.kind }}/{{ blog_item.slug }}" class="thumbnail">
+                        </a>
+                        <div class="right">
+                            <div class="title">{{ blog_item.title }}</div>
+                            <div class="meta">
+                                <a href=""><div class="tag">{{ blog_item.tag_name }}</div></a>
+                                <div class="date">{{ blog_item.updated_date|date('Y/m/d') }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="foot">
+        </div>
+    </section>
+    <section class="history">
+        <div class="head">
+            <div class="title" data-en="News">新着情報</div>
+        </div>
+        <div class="body">
+            <dl class="list">
+                {# {% for i in 0..3 %} #}
+                <dt>2022.4.7</dt>
+                <dd>サイトを公開しました</dd>
+                {# {% endfor %} #}
+            </dl>
+        </div>
+        {# <div class="foot">
+            <div class="text"><a href="">サイトマップ（リスト）</a></div>
+            <div class="text"><a href="">サイトマップ（ツリー）</a></div>
+        </div> #}
+    </section>
+</div>
+
+{# <div class="hello">
+    <div class="inner">
+        <p class="pretitle">Hello, my name is Daichi Sugiyama.</p>
+        <h1 class="title">I make websites.</h1>
+        <div class="content">
+        <p>
+            I’m a back-end developer and composer in japan. I also write about the life on my 
+            <a href="">Blog</a> and on <a href="">Twitter</a>.
+        </p>
+        </div>
+    </div>
+</div>
+<div class="featuredposts_wrapper">
+    <h2>Featured Posts</h2>
+    <div class="featuredposts">
+        <ul class="list">
+            <li class="item">
+                <div class="featuredpost" style="background-color: #4a0147;">
+                    <div class="inner">
+                        <a href="">
+                            <span>sample sample sample</span>
+                        </a>
+                        <span>Works</span>
+                    </div>
+                </div>
+            </li>
+            <li class="item">
+                <div class="featuredpost" style="background-color: #06624c;">
+                    <div class="inner">
+                        <a href="">
+                            <span>sample sample sample</span>
+                        </a>
+                        <span>Blog</span>
+                    </div>
+                </div>
+            </li>
+            <li class="item">
+                <div class="featuredpost" style="background-color: #000000;">
+                    <div class="inner">
+                        <a href="">
+                            <span>sample sample sample</span>
+                        </a>
+                        <span>Blog</span>
+                    </div>
+                </div>
+            </li>
+            <li class="item">
+                <div class="featuredpost" style="background-color: #1E2C54;">
+                    <div class="inner">
+                        <a href="">
+                            <span>sample sample sample</span>
+                        </a>
+                        <span>Blog</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="featuredposts_footer">
+        <a href="/" class="see_all">See All posts→</a>
+    </div>
+</div> #}
+{% endblock %}

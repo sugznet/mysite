@@ -1,0 +1,53 @@
+{% extends 'template/template.twig' %}
+{% set title='Contact' %}
+{% set description='Daichi Sugiyamaの作ったものと思考記録' %}
+{% set page_id='contact' %}
+{% set slug='/contact' %}
+{% block head %}
+{{parent()}}
+<link rel="stylesheet" type="text/css" href="/css/contact/style.min.css?version={{siteinfo.version}}">
+<script src="/js/contact/script.min.js?version={{siteinfo.version}}"></script>
+{% endblock %}
+{% block main %}
+<header class="page_header">
+    <h1 class="page_title">Contact</h1>
+</header>
+<div class="contact_form">
+    <form action="/contact/confirm" method="POST">
+    <span class="desc">Daichi Sugiyamaへのお問合せは下記のフォームからお願いいたします。<br>※印は必須項目となります。<span class="error">
+    <br>※入力内容に入力漏れ、もしくは無効な項目があります。</span></span>
+    <table class="contact_table" border="1">
+        <tr>
+            <th class="title">お問合せ項目</th>
+            <td class="text">
+                <select name="category" class="column_input">
+                    <option value="works"{% if category_id == "works" %} selected{% endif %}>制作物について</option>
+                    <option value="collaboration"{% if category_id == "collaboration" %} selected{% endif %}>コラボのお誘いについて</option>
+                    <option value="request"{% if category_id == "request" %} selected{% endif %}>仕事依頼について</option>
+                    <option value="other"{% if category_id == "other" %} selected{% endif %}>その他</option>
+                </select>
+            </td>
+        </tr>    
+        <tr>
+            <th class="title">お名前※</th>
+            <td class="text"><input type="text" name="name" placeholder="太郎" class="kanji_input" value="{{ name }}"></td>
+        </tr>
+        <tr>
+            <th class="title">おなまえ（かな）</th>
+            <td class="text"><input type="text" name="name_kana" placeholder="たろう" class="kana_input" value="{{ name_kana }}"></td>
+        </tr>    
+        <tr>
+            <th class="title">E-mail※</th>
+            <td class="text"><input type="email" name="email" autocomplete="email" class="email_input" placeholder="taro@sample.com" value="{{ email }}"></td>
+        </tr>
+        <tr>
+            <th class="title">本文※</th>
+            <td class="text"><textarea name="body" class="body_input">{{ body }}</textarea></td>
+        </tr>
+    </table>
+    <div class="btnarea">
+        <button class="confirmbtn">確認画面へ</button>
+    </div>
+    </form>
+</div>
+{% endblock %}

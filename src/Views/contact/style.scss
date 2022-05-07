@@ -1,0 +1,89 @@
+@charset "UTF-8";
+@import "../template/base/reset.scss";
+@import "../template/base/setting.scss";
+@import "../template/layout/1column.scss";
+@import "../template/ui/header.scss";
+@import "../template/ui/main.scss";
+@import "../template/ui/footer.scss";
+
+.main {
+    .contact_form {
+        text-align: center;
+        margin-bottom: 30px;
+        color: var(--color-text);
+        .desc {
+            
+            .error {
+                display: none;
+                color: var(--color-primary);
+            }
+        }
+        .contact_table {            
+            border-collapse:collapse;
+            margin: 30px auto 0;
+            td, th {
+                border: 1px solid var( --color-border);
+                // border-bottom: 1px solid var( --color-border);
+                padding: 20px;
+                vertical-align: middle;
+            }
+            .title {
+                background-color: var(--color-bg-offset);
+                width: 160px;
+                text-align: left;
+            }
+            .text {
+                text-align: left;
+            }
+            .confirm_text {
+                min-width: 400px;
+                max-width: 800px;
+            }
+            .column_input, .kanji_input, .kana_input {
+                width: 350px;
+                height: 34px;
+            }
+            .email_input {
+                width: 660px;
+                height: 34px;
+            }
+            .body_input {
+                width: 660px;
+                height: 250px;
+            }
+        }
+
+        .btnarea {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            .confirmbtn {
+                cursor: pointer;
+                font-size: 16px;
+                margin: 20px;
+                width: 160px;
+                height: 50px;
+                background-color: var(--color-secondary);
+                border: 1px colid var(--color-border);
+            }    
+            .submitbtn  {
+                cursor: pointer;
+                font-size: 16px;
+                margin: 20px;
+                width: 160px;
+                height: 50px;
+                background-color: var(--color-secondary);
+                border: 1px colid var(--color-border);
+            }
+            .backbtn {
+                cursor: pointer;
+                font-size: 16px;
+                margin: 20px;
+                width: 160px;
+                height: 50px;
+                background-color: var(--color-bg-offset);
+                border: 1px colid var(--color-border);
+            }
+        }
+    }
+}

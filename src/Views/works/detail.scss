@@ -1,0 +1,70 @@
+/* =================================
+    Works Detail Page
+================================= */
+@charset "UTF-8";
+@import "../template/base/reset.scss";
+@import "../template/base/setting.scss";
+@import "../template/layout/1column.scss";
+@import "../template/ui/header.scss";
+@import "../template/ui/menu.scss";
+@import "../template/ui/content.scss";
+@import "../template/ui/footer.scss";
+
+.content { 
+    color: var(--color-text);
+}
+
+/*=====================
+    Head section
+=====================*/
+.content { 
+    .head {
+        .breadcrumb {
+            margin-top: 8px;
+            margin-left: 20px;
+            font-size: 12px;
+            li {
+                display: inline;
+                text-decoration: none;
+            }
+            li:after {
+                content: ">";
+                display: inline-block;
+                vertical-align: middle;
+                padding: 0 12px;
+                color: var(--color-text);
+            }
+            li:last-child:after {
+                content: "";
+            }
+            a {
+                color: var(--color-text);
+            }
+        }
+        .title {
+            margin-top: 30px;
+            position: relative;
+            padding-top: 20px;
+            padding-bottom: 10px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .meta {
+            p {
+                // width: 200px;
+                text-align: center;
+                font-size: 12px;
+                // margin: 0 auto;
+            }
+        }
+        .thumbnail {
+            text-align: center;
+            img {
+                width: 300px;
+            }
+        }
+    }
+}
+
+
+

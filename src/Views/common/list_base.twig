@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='ja'>
+<head>
+
+{% block %}
+    {{ include('common/meta/common.twig') }}
+{% endblock %}
+
+</head>
+<body>
+
+<div class="loading">
+</div>
+
+{% block header %}
+    {{ include('common/part/header.twig') }}
+{% endblock header %}
+
+{% block list %}{% endblock list %}
+
+{% block sidebar %}
+    {{ include('common/part/sidebar.twig') }}
+{% endblock sidebar %}
+
+{% block footer %}
+    {{ include('common/part/footer.twig') }}
+{% endblock footer %}
+
+</body>
+</html>

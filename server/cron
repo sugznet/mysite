@@ -1,0 +1,4 @@
+PATH=/usr/bin:/bin:/usr/local/bin
+0,10,20,30,40,50 * * * * cd /home/www/d.sugiyama/src; /usr/local/bin/yarn run test-dsugiyama >> /home/www/d.sugiyama/log/test/dsugiyama.log 2>&1
+2,12,22,32,42,52 * * * * cd /home/www/d.sugiyama/src; /usr/local/bin/yarn run test-seodoa >> /home/www/d.sugiyama/log/test/seodoa.log 2>&1
+4,14,24,34,44,54 * * * * cd /home/www/d.sugiyama/src; /usr/local/bin/yarn run test-sofia >> /home/www/d.sugiyama/log/test/sofia.log 2>&1

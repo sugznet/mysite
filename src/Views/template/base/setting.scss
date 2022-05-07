@@ -1,0 +1,41 @@
+
+/* theme color */
+:root,
+:root[theme='monotone_black'] {
+    --color-bg: #1e1f20;
+    --color-bg-offset: #191a1a;
+    --color-text: #f6f6f6;
+    --color-text-offset: #dbdbdb;
+    --color-border: #888888;
+    --color-border-offset: #a3a3a3;
+    // --color-primary: #00ffff;
+    // --color-primary-rgb: 0,255,255;
+    // --color-primary-offset: #0ad9d9;
+    --color-primary: rgb(211 159 239);
+    --color-primary-rgb: 211,159,239;
+    --color-primary-offset: #b06fd0;
+}
+
+@font-face {
+  font-family: notosans;
+  src: url('/fnt/NotoSansJP-Regular.otf') format("opentype");
+}
+body, h1, h2, h3, h4, h5, h6  {
+  font-family: garamond-premier-pro-caption, source-han-serif-japanes, notosans, sans-serif;
+}
+
+
+$grid-breakpoints: (
+  sp: 0,
+  tab: 520px,
+  pc: 920px,
+);
+$container-max-widths: (
+  sp: 0,
+  tab: 500px,
+  pc: 900px,
+);
+// $grid-columns: 20;
+$grid-gutter-width: 0;
+// $grid-row-columns: 10;
+@import "../../../library/js/bootstrap/scss/bootstrap-grid.scss";

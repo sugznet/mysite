@@ -1,0 +1,37 @@
+{# =================================
+    メニュー
+==================================== #}
+{# Future
+   - Home        ホーム
+   - Result     制作物の結果
+   - Blog        ブログ記事（D以上向け）
+   - Works       制作物本体
+   - Worklog     制作記事（C向け）
+   - Prototype   試作品
+   - Profile     自己紹介
+   - Youtube
+   - Twitter
+#}
+<nav class="navigation">
+    <div class="inner">
+        <div class="head">
+            <div class="title" data-en="Menu">メニュー</div>
+        </div>
+        <ul class="list">    
+            <li class="item">
+                <a href="/" class="link {% if menu_id == 'home' %}active{% endif %}" aria-current="page">Home</a>
+            </li>
+            <li class="item">
+                <a href="/works" class="link {% if menu_id == 'works' %}active{% endif %}" aria-current="page">Works</a>
+            </li>
+            <li class="item">
+                <a href="/blog" class="link {% if menu_id == 'blog' %}active{% endif %}" aria-current="page">Blog</a>
+            </li>
+            <li class="item">
+                <a href="https://twitter.com/_daichisugiyama" target="_brank" class="link" aria-current="page">
+                    <img src="/img/common/twitter.png" class="icon">
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

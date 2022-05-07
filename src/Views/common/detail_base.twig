@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='ja'>
+<head>
+
+{{ include('common/base_head.twig') }}
+{% block head %}{% endblock %}
+<link rel="stylesheet" type="text/css" href="/css/common/detail.min.css?ver={{siteInfo.version}}">
+
+</head>
+<body>
+
+<div class="loading">
+</div>
+
+{% block header %}
+    {{ include('common/part/header.twig') }}
+{% endblock %}
+
+{% block detail %}{% endblock %}
+
+{% block sidebar %}
+    {{ include('common/part/sidebar.twig') }}
+{% endblock %}
+
+{% block footer %}
+    {{ include('common/part/footer.twig') }}
+{% endblock %}
+
+</body>
+</html>

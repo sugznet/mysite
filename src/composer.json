@@ -1,0 +1,28 @@
+{
+    "name": "d.sugiyama/ap",
+    "description": "Daichi Sugiyama",
+    "authors": [
+        {
+            "name": "Daichi Sugiyama",
+            "email": "daichi.sugiyama.public@gmail.com"
+        }
+    ],
+    "config": {
+        "vendor-dir": "library/php"
+    },
+    "autoload": {
+        "psr-4": {
+            "DSugiyama\\Controller\\": "Controllers",
+            "DSugiyama\\Util\\": "Controllers/util",
+            "DSugiyama\\Model\\": "Models",
+            "DSugiyama\\Test\\": "Controllers/test"
+        }
+    },
+    "require": {
+        "twig/twig": "^3.3",
+        "nikic/fast-route": "^1.3",
+        "phpmailer/phpmailer": "^6.6",
+        "illuminate/database": "^8.83",
+        "microcmsio/microcms-php-sdk": "^1.0"
+    }
+}

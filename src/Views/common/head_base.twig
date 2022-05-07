@@ -1,0 +1,44 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+{% if title != "" %}
+<title>{{ title }} {{ siteinfo.sepalater }} {{ siteinfo.title }}</title>
+{% else %}
+<title>{{ siteinfo.title }}</title>
+{% endif %}
+{% if description != "" %}
+<meta name="description" content="{{ description }}" >
+{% endif %}
+{% if keywords != "" %}
+<meta name="keywords" content="{{ keywords }}">
+{% endif %}
+{% if favicon != "" %}
+<link rel="shortcut icon" href="{{ siteinfo.base_url }}{{ favicon }}">
+{% endif %}
+{% if siteinfo.slug != "/" %}
+<link rel="canonical" href="{{ siteinfo.base_url }}{{ siteinfo.slug }}">
+{% else %}
+<link rel="canonical" href="{{ siteinfo.base_url }}">
+{% endif %}
+<link rel="stylesheet" type="text/css" href="/css/mediaelementplayer.min.css?{{siteinfo.version}}">
+<script src="/js/jquery.min.js"></script>
+<script src="/js/mediaelement.min.js"></script>
+<script src="/js/mediaelement-and-player.min.js"></script>
+<script src="/js/template/common.min.js?{{siteinfo.version}}"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XPW2ZD3RHQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XPW2ZD3RHQ');
+</script>
+<script>
+  (function(d) {
+    var config = {
+      kitId: 'vle3jrt',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>

@@ -1,0 +1,51 @@
+{% extends 'template/template.twig' %}
+{% set title='Contact' %}
+{% set description='Daichi Sugiyamaの作ったものと思考記録' %}
+{% set page_id='contact' %}
+{% block head %}
+{{parent()}}
+<link rel="stylesheet" type="text/css" href="/css/contact/style.min.css?version={{siteinfo.version}}">
+<script src="/js/contact/script.min.js?version={{siteinfo.version}}"></script>
+{% endblock %}
+{% block main %}
+<header class="page_header">
+    <h1 class="page_title">Contact</h1>
+</header>
+<div class="contact_form">
+    <form action="/contact/complete" method="POST">
+    <input type="hidden" name="category_id" value="{{ category_id }}">
+    <input type="hidden" name="category_name" value="{{ category_name }}">
+    <input type="hidden" name="name" value="{{ name }}">
+    <input type="hidden" name="name_kana" value="{{ name_kana }}">
+    <input type="hidden" name="email" value="{{ email }}">
+    <input type="hidden" name="body" value="{{ body }}">
+    <span class="desc">以下の入力項目で良ければ「送信」を押してしてください。<br>修正が必要の際は「修正」を押してください。</span>
+    <table class="contact_table">
+        <tr>
+            <th class="title">お問合せ項目：</th>
+            <td class="text confirm_text">{{ category_name }}</td>
+        </tr>    
+        <tr>
+            <th class="title">お名前※</th>
+            <td class="text confirm_text">{{ name }}</td>
+        </tr>
+        <tr>
+            <th class="title">おなまえ（かな）</th>
+            <td class="text confirm_text">{{ name_kana }}</td>
+        </tr>    
+        <tr>
+            <th class="title">E-mail※</th>
+            <td class="text confirm_text">{{ email }}</td>
+        </tr>
+        <tr>
+            <th class="title">本文※</th>
+            <td class="text confirm_text">{{ body|nl2br }}</td>
+        </tr>
+    </table>
+    <div class="btnarea">
+        <button type="button" class="backbtn"  data-action="/contact">＜修正する</button></a>
+        <button type="submit" class="submitbtn">送信する＞</button>
+    </div>
+    </form>
+</div>
+{% endblock %}

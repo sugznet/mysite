@@ -1,0 +1,116 @@
+{# =================================
+    ブログ
+==================================== #}
+{% extends 'template/base/base.twig' %}
+{% set title='ブログ' %}
+{% set description='Daichi Sugiyamaのブログ' %}
+{% set keywords='Daichi Sugiyama,杉山大知,ブログ,Blog' %}
+{% set menu_id='blog' %}
+{% block head %}
+{{parent()}}
+<link rel="stylesheet" type="text/css" href="/css/blog/style.min.css?{{siteinfo.version}}">
+<script src="/js/blog/script.min.js?{{siteinfo.version}}"></script>
+{% endblock %}
+{% block content %}
+<div class="inner">
+    <div class="head">
+        <ol class="breadcrumb">
+            <li>
+                <a href="/"><img src="/img/common/home.png" class="icon"></img></a>
+            </li>
+            <li>
+                <a href="/blog">ブログ</a>
+            </li>
+        </ol>
+        <h1 class="title" data-en="Blog">ブログ</h1>
+    </div>
+    <div class="body">
+        <div class="search_box">
+            <div class="title">分類</div>
+            <ol class="tags">
+                <li class="tag active"><a href="">全て</a></li>
+                <li class="tag"><a href="">読書</a></li>
+                <li class="tag"><a href="">人生</a></li>
+            </ol>
+        </div>
+        <div class="search_box">
+            <div class="title">年</div>
+            <ol class="tags">
+                <li class="tag active"><a href="">全て</a></li>
+                <li class="tag"><a href="">2020</a></li>
+                <li class="tag"><a href="">2021</a></li>
+                <li class="tag"><a href="">2022</a></li>
+            </ol>
+        </div>
+        <div class="cards">
+            <div class="container-fluid">
+                <div class="row">
+                    {% for blog_item in blog_list %}
+                    <div class="col-12">
+                        <div class="card">
+                            <a href="/{{ blog_item.kind }}/{{ blog_item.slug }}" class="link">
+                                <img src="/{{ blog_item.kind }}/{{ blog_item.slug }}" class="thumbnail">
+                            </a>
+                            <div class="right">
+                                <div class="title">{{ blog_item.title }}</div>
+                                <div class="meta">
+                                    <a href=""><div class="tag">{{ blog_item.tag_name }}</div></a>
+                                    <div class="date">{{ blog_item.updated_date|date('Y/m/d') }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {# <div class="pagenation">
+            <a class="prev" href="">«</a>
+            <a class="page_number active" href="">1</a>
+            <a class="page_number" href="">2</a>
+            <a class="page_number" href="">3</a>   
+            <span class="dots">...</span>
+            <a class="page_number" href="">5</a>
+            <a class="next" href="">»</a>
+        </div> #}
+    </div> 
+</div>
+
+{# <header class="page_header">
+    <h1 class="page_title">Blog</h1>
+</header>
+<div class="page_content">
+    <ol class="postlist">
+        <li class="item">
+            <h2 class="title"><a href="">Make Free Stuff</a></h2>
+            <div class="meta">
+                <time class="date">2022-02-10</time>
+                <span aria-hidden="true">⋅</span>
+                <span class="tags">GENERAL</span>
+            </div>
+            <p class="excerpt">On web3, Wordle and the radical concept of building things for free.</p>
+        </li>
+
+        <li class="item">
+            <h2 class="title"><a href="">Media Queries in Times of @container</a></h2>
+            <div class="meta">
+                <time class="date">2022-02-07</time>
+                <span aria-hidden="true">⋅</span>
+                <span class="tags">CODE</span>
+            </div>
+            <p class="excerpt">With container queries now on the horizon - will we need media queries at all?</p>
+        </li>
+
+        <li class="item">
+            <h2 class="title"><a href="">Container Queries in Web Components</a></h2>
+            <div class="meta">
+                <time class="date">2022-02-06</time>
+                <span aria-hidden="true">⋅</span>
+                <span class="tags">CODE</span>
+            </div>
+            <p class="excerpt">Container Queries are one of the most anticipated new features in CSS. I recently got a chance to play with them a bit and came up with this demo.</p>
+        </li>
+    </ol>
+</div> #}
+
+{% endblock %}

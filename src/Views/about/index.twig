@@ -1,0 +1,27 @@
+{% extends 'template/template.twig' %}
+{% set title='About' %}
+{% set description='About - Daichi Sugiyamaについて' %}
+{% set page_id='about' %}
+{% set slug='/about' %}
+{% block head %}
+{{parent()}}
+<link rel="stylesheet" type="text/css" href="/css/about/style.min.css?version={{siteinfo.version}}">
+<script src="/js/about/script.min.js?version={{siteinfo.version}}"></script>
+{% endblock %}
+{% block main %}
+<div class="content">
+    <div class="about">
+    </div>
+    <div class="markdown">
+        <h2>Works</h2>
+        <h2>Speaking</h2>
+        <h2>Offline</h2>
+        <h2>Online</h2>       
+        <ul>
+            <li><a href="">Twitter</a></li>
+            <li><a href="">Youtube</a></li>
+            <li><a href="">Github</a></li>
+        </ul>     
+    </div>
+</div>
+{% endblock %}

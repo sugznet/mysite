@@ -1,0 +1,72 @@
+{# =================================
+    Alpha Music課題
+==================================== #}
+{% extends 'template/base/base.twig' %}
+{% set title='作曲課題 | Works' %}
+{% set description='Daichi Sugiyamaの制作物をまとめています。' %}
+{% set keywords='Daichi Sugiyama,杉山大知,楽曲,Music' %}
+{% set menu_id='works' %}
+{% block head %}
+{{parent()}}
+<link rel="stylesheet" type="text/css" href="/css/works/style.min.css?{{siteinfo.version}}">
+<link rel="stylesheet" type="text/css" href="/css/works/detail.min.css?{{siteinfo.version}}">
+<link rel="stylesheet" type="text/css" href="/css/works/music/alphamusic.min.css?{{siteinfo.version}}">
+<script src="/js/works/script.min.js?{{siteinfo.version}}"></script>
+{% endblock %}
+{% block content %}
+<div class="inner">
+    <div class="head">
+        <ol class="breadcrumb">
+            <li>
+                <a href="/"><img src="https://placehold.jp/15x15.png"></img></a>
+            </li>
+            <li>
+                <a href="/works">制作物</a>
+            </li>
+            <li>
+                <a href="/works/alphamusic">作曲課題</a>
+            </li>
+        </ol>
+        <h1 class="title">作曲課題</h1>
+        <span class="meta"><p>2022.04～ in progress</p></span>
+    </div>
+    <div class="body">
+        <div class="cards">
+            <div class="container-fluid">
+                <div class="row">
+                    {% for i in 0..6 %}
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="top">
+                                <div class="left">
+                                    <div class="title">Title</div>
+                                    <ul class="code">
+                                        <li>C</li>
+                                        <li>G</li>
+                                        <li>Am</li>
+                                        <li>F</li>
+                                    </ul>
+                                </div>
+                                <div class="right">
+                                    <div>
+                                        <img src="https://placehold.jp/30x30.png">再生</img>
+                                    </div>
+                                    <div>
+                                        <a href="" class="dl_button">.mp3</a>
+                                        <a href="" class="dl_button">.ogp</a>
+                                        <a href="" class="dl_button">.cpr</a>
+                                    </div>
+                                </div>       
+                            </div>
+                            <div class="bottom">
+                                <div class="date">2020/1/1</div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

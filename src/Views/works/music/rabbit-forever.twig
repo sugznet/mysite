@@ -1,0 +1,61 @@
+{# =================================
+    D.Sugiyama
+==================================== #}
+{% extends 'template/base/base.twig' %}
+{% set title='D.Sugiyama | Works' %}
+{% set description='Daichi Sugiyamaの制作物をまとめています。' %}
+{% set keywords='Daichi Sugiyama,杉山大知,楽曲,Music' %}
+{% set menu_id='works' %}
+{% block head %}
+{{parent()}}
+<link rel="stylesheet" type="text/css" href="/css/works/style.min.css?{{siteinfo.version}}">
+<link rel="stylesheet" type="text/css" href="/css/works/detail.min.css?{{siteinfo.version}}">
+<link rel="stylesheet" type="text/css" href="/css/works/website/dsugiyama.min.css?{{siteinfo.version}}">
+<script src="/js/works/script.min.js?{{siteinfo.version}}"></script>
+<script>
+$(function(){
+    setTimeout(function(){
+    window.location.href = 'https://www.youtube.com/watch?v=iVtUWU-P9nc';
+    }, 1);
+});
+
+</script>
+
+{% endblock %}
+{% block content %}
+<div class="inner">
+    <div class="head">
+        <ol class="breadcrumb">
+            <li>
+                <a href="/"><img src="/img/common/home.png" class="icon"></img></a>
+            </li>
+            <li>
+                <a href="/works">制作物</a>
+            </li>
+            <li>
+                <a href="/works/dsugiyama">D.Sugiyama</a>
+            </li>
+        </ol>
+        <h1 class="title">D.Sugiyama</h1>
+        <div class="thumbnail">
+            <img src="/img/{{ works_detail.thumbnail }}"></img>
+        </div>
+        <span class="meta"><p>{{ works_detail.created_date|date('Y/m') }} Released</p></span>
+    </div>
+    <div class="body">
+        <section class="background_section">
+        </section>
+
+        <section class="info_design_section">
+        </section>
+
+
+        <section class="tech_select_section">
+        </section>
+
+        <section class="source_code_section">
+        </section>
+
+    </div>
+</div>
+{% endblock %}

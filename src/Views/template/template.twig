@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang='ja'>
+<head>
+{% block head %}{{ include('template/ui/head.twig') }}{% endblock %}
+</head>
+<body>
+    <div class="loading"></div>
+    <div class="layout">
+        <header class="header" role="banner">
+        {{ include('template/ui/header.twig') }}
+        </header>
+        <main class="main container" role="main">
+            <div class="page {{ page_id }}">
+            {% block main %}{% endblock %}
+            </div>
+        </main>
+        <footer class="footer" role="contentinfo">
+        {{ include('template/ui/footer.twig') }}
+        </footer>
+    </div>
+</body>
+</html>

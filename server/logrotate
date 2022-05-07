@@ -1,0 +1,8 @@
+"/home/www/d.sugiyama/log/*.log" {
+  missingok
+  notifempty
+  daily
+  create 644 admin admin
+  compress
+  delaycompress
+}

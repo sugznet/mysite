@@ -1,0 +1,17 @@
+{% extends 'template/template.twig' %}
+{% set title='Contact' %}
+{% set description='Daichi Sugiyamaの作ったものと思考記録' %}
+{% set page_id='contact' %}
+{% block head %}
+{{parent()}}
+<link rel="stylesheet" type="text/css" href="/css/contact/style.min.css?version={{siteinfo.version}}">
+<script src="/js/contact/script.min.js?version={{siteinfo.version}}"></script>
+{% endblock %}
+{% block main %}
+<header class="page_header">
+    <h1 class="page_title">Contact</h1>
+</header>
+<div class="contact_form">
+<span class="desc">お問合せを受け付けました。<br>この度は、当サイトよりお問合せをいただき誠にありがとうございます。</span>
+</div>
+{% endblock %}
